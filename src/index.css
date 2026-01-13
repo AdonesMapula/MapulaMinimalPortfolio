@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply transition-colors duration-200;
+  }
+  
+  body {
+    @apply bg-white dark:bg-black text-black dark:text-white;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .print-hidden {
+    @media print {
+      display: none !important;
+    }
+  }
+  
+  .print-only {
+    display: none;
+    @media print {
+      display: block;
+    }
+  }
+}
+
+/* Print Styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  nav,
+  footer {
+    display: none !important;
+  }
+  
+  section {
+    page-break-inside: avoid;
+  }
+  
+  .resume-content,
+  .cover-letter-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+  
+  .page-break {
+    page-break-after: always;
+  }
+  
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+  
+  /* Ensure borders are visible in print */
+  .border-black,
+  .dark\:border-white {
+    border-color: black !important;
+  }
+}
+
