@@ -11,7 +11,7 @@ export const projects = [
     id: 2,
     name: 'Rapollo Website',
     description: 'Rapollo Wear Website is a culture-driven fashion platform that celebrates Cebu’s hip-hop scene through clothing, community, and creativity. The site showcases exclusive, limited-edition collections inspired by Cebuano culture, highlights local designers and emcees, and serves as a hub for events, stories, and collaborations. With a focus on cultural authenticity, sustainability, and community connection, the website offers both an easy shopping experience and an immersive look into Cebu’s vibrant hip-hop movement.',
-    techStack: ['React JS', 'Tailwind CSS', ', 'Firebase, 'Node.js''],
+    techStack: ['React JS', 'Tailwind CSS', 'Firebase', 'Node.js'],
     github: 'https://github.com/AdonesMapula/rapollo-web.git',
     liveDemo: null,
   },
