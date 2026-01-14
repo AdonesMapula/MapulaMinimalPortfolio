@@ -4,13 +4,24 @@ import PrintButton from '../components/PrintButton';
 
 const Resume = () => {
   const handlePrint = () => {
+    // Add print class to this section and remove from others
+    document.body.classList.add('print-resume');
+    document.body.classList.remove('print-cover-letter');
+    
+    // Remove class after print dialog closes
+    const handleAfterPrint = () => {
+      document.body.classList.remove('print-resume');
+      window.removeEventListener('afterprint', handleAfterPrint);
+    };
+    window.addEventListener('afterprint', handleAfterPrint);
+    
     window.print();
   };
 
   return (
     <section
       id="resume"
-      className="py-20 px-4 sm:px-6 lg:px-8 print:py-0"
+      className="resume-section py-20 px-4 sm:px-6 lg:px-8 print:py-0"
     >
       <div className="max-w-4xl mx-auto">
         <div className="no-print mb-8 flex justify-center">

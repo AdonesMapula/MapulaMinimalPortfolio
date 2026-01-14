@@ -1,3 +1,5 @@
+import Typewriter from '../components/Typewriter';
+
 const Hero = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -13,6 +15,15 @@ const Hero = () => {
     }, 500);
   };
 
+  const typewriterTexts = [
+    'BSIT Student',
+    'Web Developer',
+    'React Developer',
+    'Mobile App Developer',
+    'Problem Solver',
+    'Tech Enthusiast',
+  ];
+
   return (
     <section
       id="hero"
@@ -22,8 +33,8 @@ const Hero = () => {
         <h1 className="text-5xl md:text-7xl font-bold mb-4">
           Adones Mapula
         </h1>
-        <p className="text-lg md:text-xl mb-12 opacity-80">
-          BSIT Student • Software Developer
+        <p className="text-lg md:text-xl mb-12 opacity-80 min-h-[2rem]">
+          <Typewriter texts={typewriterTexts} speed={100} deleteSpeed={50} pauseTime={2000} />
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button

@@ -28,6 +28,21 @@
   }
 }
 
+/* Typewriter cursor animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.typewriter-cursor {
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
 /* Print Styles */
 @media print {
   * {
@@ -52,8 +67,25 @@
     display: none !important;
   }
   
+  /* Hide all sections by default when printing */
   section {
+    display: none !important;
     page-break-inside: avoid;
+  }
+  
+  /* Show only resume section when printing resume */
+  body.print-resume .resume-section {
+    display: block !important;
+  }
+  
+  /* Show only cover letter section when printing cover letter */
+  body.print-cover-letter .cover-letter-section {
+    display: block !important;
+  }
+  
+  /* If no print class is set, show all sections (fallback) */
+  body:not(.print-resume):not(.print-cover-letter) section {
+    display: block !important;
   }
   
   .resume-content,
