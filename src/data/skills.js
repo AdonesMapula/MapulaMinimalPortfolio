@@ -9,5 +9,6 @@ export const skills = [
   'SQL',
   'Python',
   'Kotlin',
+  'Node.js',
 ];
 
